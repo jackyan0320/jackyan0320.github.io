@@ -3,6 +3,8 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
+    - text: "Code"
+      href: code.html  
     - text: "Google"
       href: https://www.google.com/
     - text: "About"
