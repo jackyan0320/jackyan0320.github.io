@@ -14,3 +14,13 @@ I can link directly to my [about page](about.html)
 
 #here's my desktop! 
 <img src="images/scene.png" style="width:100%">
+
+# I can add code
+```{r}
+library(tidyverse)
+tibble(
+  x = 1:10,
+  y = x + 2
+)
+```
+
