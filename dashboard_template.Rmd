@@ -1,18 +1,23 @@
 ---
-title: "plotly"
-author: "Jack Yan"
-date: "10/23/2018"
-output: html_document
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
-```{r}
+```{r setup, include=FALSE}
+library(flexdashboard)
 library(tidyverse)
 library(plotly)
 library(p8105.datasets)
 library(viridis)
 ```
 
+Column {data-width=650}
+-----------------------------------------------------------------------
 
+### Chart A
 
 ```{r}
 set.seed(1)
@@ -30,7 +35,10 @@ nyc_airbnb =
   sample_n(5000)
 ```
 
-#scatterplot
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
 
 ```{r}
 nyc_airbnb %>%
@@ -41,7 +49,7 @@ nyc_airbnb %>%
           text = ~text_label)
 ```
 
-# boxplot
+### Chart C
 
 ```{r}
 common_neighborhoods =
@@ -56,29 +64,5 @@ inner_join(nyc_airbnb, common_neighborhoods,
   mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
   plot_ly(y = ~price, color = ~neighbourhood, type = "box",
           colors = "Set2")
-```
-
-
-# bar plot
-
-```{r}
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
-```
-
-# ggplotly
-
-```{r}
-scatter_ggplot = 
-  nyc_airbnb %>%
-  ggplot(aes(x = longitude, y = latitude, color = price)) +
-  geom_point(alpha = 0.25) +
-  scale_color_viridis() +
-  coord_cartesian() +
-  theme_classic()
-
-ggplotly(scatter_ggplot)
 ```
 

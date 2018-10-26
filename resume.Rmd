@@ -1,7 +1,7 @@
 ---
-title: "code.rmd"
+title: "resume"
 author: "Jack Yan"
-date: "10/18/2018"
+date: "10/26/2018"
 output: html_document
 ---
 
@@ -9,5 +9,4 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
