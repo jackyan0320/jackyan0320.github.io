@@ -1,10 +1,93 @@
 ---
-title: "flexdashboard"
-author: "Jack Yan"
-date: "10/26/2018"
-output: html_document
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
+library(flexdashboard)
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r, echo=FALSE}
+set.seed(1)
+# draw a scatter ggplot
+scatter_ggplot = 
+  instacart %>% 
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, desc(n))) %>% 
+  sample_n(50) %>% 
+  ggplot(aes(x = aisle, y = n)) +
+  scale_y_log10(breaks = c(200000,20000, 2000, 200),labels = c("200000","20000", "2000", "200"), limits = c(200,200001)) +
+    geom_point() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, size = rel(1))) +
+    labs(
+      title = "Number of items ordered in selected aisles",
+      x = "Aisle",
+      y = "Number of items"
+    ) 
+
+# convert to ggplotly
+ggplotly(scatter_ggplot) 
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r, echo=FALSE}
+# draw a box ggplot
+box_ggplot = 
+  instacart %>%
+  group_by(department, department_id) %>% 
+  count(aisle) %>% 
+  #filter(n > 1000) %>% 
+  #filter(department_id %in% 1:10) %>% 
+  ggplot(aes(x = department, y = n, fill = department)) +
+    geom_boxplot() +
+    labs(
+      x = "Department",
+      y = "Number of items bought",
+      title = "Number of items bought in each aisle, by department"
+    ) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, size = rel(1)))
+
+# convert to ggplotly
+ggplotly(box_ggplot)
+```
+
+### Chart C
+
+```{r, echo=FALSE}
+# draw a line ggplot
+line_ggplot = 
+  instacart %>% 
+  mutate(order_dow = factor(order_dow, labels = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"))) %>% 
+  filter(product_name %in% c('Pink Lady Apples', "Coffee Ice Cream")) %>% 
+  group_by(product_name, order_dow) %>% 
+  summarize(mean = mean(order_hour_of_day)) %>% 
+  ungroup(product_name) %>% 
+  ggplot(aes(x = order_dow, y = mean, group = product_name, color = product_name)) +
+    geom_line() +
+    labs(
+      x = "Day in the Week",
+      y = "Hour",
+      title = "Average time in a day items are bought"
+    ) 
+
+# convert to plotly
+ggplotly(line_ggplot)
 ```
