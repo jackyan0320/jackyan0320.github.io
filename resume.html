@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -169,6 +172,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -256,14 +354,18 @@ $(document).ready(function () {
 <p>STATISTICIAN INTERN</p>
 <p>May 2017 – Aug 2017 | Nanjing, China</p>
 <ul>
-<li>Workedonclinicaltrialdesignandstatisticalanalysiswithseveralclinicaltrial and experiment reports.</li>
-<li>Attendedroutinetrainingsand5consultingeventsonclinicalresearch statistical analysis.</li>
+<li>Worked on clinical trial design and statistical analysis with several clinical trial and experiment reports.</li>
+<li>Attended routine trainings and 5 consulting events on clinical research statistical analysis.</li>
 <li>Assisted in preliminary stage of a trial about adult mesenchymal stem cell therapy for diminished ovarian reserve patients; got familiarized with Electric Data Capture System.</li>
 </ul>
 <p><strong>UNIVERSITY OF CALIFORNIA, DAVIS</strong></p>
 <p>RESEARCH ASSISTANT</p>
 <p>Sep 2016 – Dec 2016 | Davis, CA</p>
-<p>• Practiced molecular biology techniques including plasmidextraction, transformation, enzyme digestion, DNA gel electrophoresis, and primer design. • Learnt to do BLAST and plasmid sequence annotation. • Assisted to work on a project of sunflower circadian regulation and heliotropism.</p>
+<ul>
+<li>Practiced molecular biology techniques including plasmidextraction, transformation, enzyme digestion, DNA gel electrophoresis, and primer design.</li>
+<li>Learnt to do BLAST and plasmid sequence annotation.</li>
+<li>Assisted to work on a project of sunflower circadian regulation and heliotropism.</li>
+</ul>
 </div>
 <div id="research" class="section level1">
 <h1>RESEARCH</h1>
@@ -271,21 +373,23 @@ $(document).ready(function () {
 <p>HEAD UNDERGRAD RESEACHER</p>
 <p>Apr 2016 – Jun 2017 | Nanjing, China</p>
 <ul>
-<li>Designedandconductedexperimentstoanalyzeimpactsofsoilfactorsand three soil types on the structure of soil bacterial communities.</li>
-<li>AnalyzedbacterialdiversitybycalculatingShannonIndex,SimpsonIndex,and Dominance Index and clustering analysis; discussed the impacts of all factors and compared with publications.</li>
+<li>Designed and conducted experiments to analyze impacts of soil factors and three soil types on the structure of soil bacterial communities.</li>
+<li>Analyzed bacterial diversity by calculating Shannon Index, Simpson Index, and Dominance Index and clustering analysis; discussed the impacts of all factors and compared with publications.</li>
 </ul>
 <p><strong>NAU PLANT PHYSIOLOGY LAB</strong></p>
 <p>HEAD UNDERGRAD RESEARCH</p>
 <p>Dec 2016 – Jun 2017 | Nanjing, China</p>
 <ul>
-<li>Studiedhydrogen-richwater’seffectonnitratereductaseactivity,vitaminC content and degradation of pesticides of types of fruit and vegetable.</li>
-<li>Designedandpreparedavegetablepreservationboxthatcontrollablyproduce and spray hydrogen-rich water; tested its applicability and safety.</li>
-<li>Prepareddocumentsforpatentapplication(authorized)andPPT/reportsfor contest.</li>
+<li>Studied hydrogen-rich water’s effect on nitrate reductase activity, vitamin C content and degradation of pesticides of types of fruit and vegetable.</li>
+<li>Designed and prepared a vegetable preservation box that controllably produce and spray hydrogen-rich water; tested its applicability and safety.</li>
+<li>Prepared documents for patent application (authorized) and PPT / reports for contest.</li>
 </ul>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 

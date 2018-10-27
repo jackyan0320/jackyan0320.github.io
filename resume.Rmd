@@ -1,8 +1,10 @@
 ---
 title: "Jack Yan"
-author: ""
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 
-output: html_document
 ---
 
 
@@ -52,8 +54,8 @@ STATISTICIAN INTERN
 
 May 2017 – Aug 2017 | Nanjing, China
 
-*  Workedonclinicaltrialdesignandstatisticalanalysiswithseveralclinicaltrial and experiment reports.
-*  Attendedroutinetrainingsand5consultingeventsonclinicalresearch statistical analysis.
+*  Worked on clinical trial design and statistical analysis with several clinical trial and experiment reports.
+*  Attended routine trainings and 5 consulting events on clinical research statistical analysis.
 *  Assisted in preliminary stage of a trial about adult mesenchymal stem cell therapy for diminished ovarian reserve patients; got familiarized with Electric Data Capture System.
 
 **UNIVERSITY OF CALIFORNIA, DAVIS**
@@ -62,9 +64,9 @@ RESEARCH ASSISTANT
 
 Sep 2016 – Dec 2016 | Davis, CA
 
-• Practiced molecular biology techniques including plasmidextraction, transformation, enzyme digestion, DNA gel electrophoresis, and primer design.
-• Learnt to do BLAST and plasmid sequence annotation.
-• Assisted to work on a project of sunflower circadian regulation and heliotropism.
+*  Practiced molecular biology techniques including plasmidextraction, transformation, enzyme digestion, DNA gel electrophoresis, and primer design.
+*  Learnt to do BLAST and plasmid sequence annotation.
+*  Assisted to work on a project of sunflower circadian regulation and heliotropism.
 
 # RESEARCH
 
@@ -74,8 +76,8 @@ HEAD UNDERGRAD RESEACHER
 
 Apr 2016 – Jun 2017 | Nanjing, China
 
-*  Designedandconductedexperimentstoanalyzeimpactsofsoilfactorsand three soil types on the structure of soil bacterial communities.
-*  AnalyzedbacterialdiversitybycalculatingShannonIndex,SimpsonIndex,and Dominance Index and clustering analysis; discussed the impacts of all factors and compared with publications.
+*  Designed and conducted experiments to analyze impacts of soil factors and three soil types on the structure of soil bacterial communities.
+*  Analyzed bacterial diversity by calculating Shannon Index, Simpson Index, and Dominance Index and clustering analysis; discussed the impacts of all factors and compared with publications.
 
 **NAU PLANT PHYSIOLOGY LAB**
 
@@ -83,7 +85,7 @@ HEAD UNDERGRAD RESEARCH
 
 Dec 2016 – Jun 2017 | Nanjing, China
 
-*  Studiedhydrogen-richwater’seffectonnitratereductaseactivity,vitaminC content and degradation of pesticides of types of fruit and vegetable.
-*  Designedandpreparedavegetablepreservationboxthatcontrollablyproduce and spray hydrogen-rich water; tested its applicability and safety.
-*  Prepareddocumentsforpatentapplication(authorized)andPPT/reportsfor contest.
+*  Studied hydrogen-rich water’s effect on nitrate reductase activity, vitamin C content and degradation of pesticides of types of fruit and vegetable.
+*  Designed and prepared a vegetable preservation box that controllably produce and spray hydrogen-rich water; tested its applicability and safety.
+*  Prepared documents for patent application (authorized) and PPT / reports for contest.
 
