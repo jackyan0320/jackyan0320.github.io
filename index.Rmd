@@ -1,3 +1,11 @@
 ---
 title: "Jack Yan"
 ---
+# Introduction
+
+
+This is Jack Yan's personal website and it is also for Homework 4 of P8105 Data Science. This website includes:
+
+*  My resume
+*  Links in the site navigation for my GitHub account, Email, and LinkedIn
+*  A flexdashboard
