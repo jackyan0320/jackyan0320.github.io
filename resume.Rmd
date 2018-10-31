@@ -1,13 +1,10 @@
 ---
 title: "Jack Yan"
-output: 
-  html_document:
-    toc: true
-    toc_float: true
+output: html_document
 
 ---
 
 
-Here is a pdf version of my [resume](./_resume_jack_yan.pdf).
+Here is a pdf version of my [resume](images/resume_jack_yan.pdf).
 
-<img src="./_resume_jack_yan.pdf" style="width:100%">
+<img src="images/resume_jack_yan.pdf" style="width:100%">
