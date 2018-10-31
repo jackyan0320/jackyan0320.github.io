@@ -8,6 +8,6 @@ output:
 ---
 
 
-Here is a pdf version of my [resume](_resume_jack_yan.pdf).
+Here is a pdf version of my [resume](./_resume_jack_yan.pdf).
 
-<img src="_resume_jack_yan.pdf" style="width:100%">
+<img src="./_resume_jack_yan.pdf" style="width:100%">
